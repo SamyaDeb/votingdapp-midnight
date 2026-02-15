@@ -1,0 +1,60 @@
+{
+  "compiler-version": "0.29.0",
+  "language-version": "0.21.0",
+  "runtime-version": "0.14.0",
+  "circuits": [
+    {
+      "name": "open_voting",
+      "pure": false,
+      "proof": true,
+      "arguments": [
+      ],
+      "result-type": {
+        "type-name": "Tuple",
+        "types": [
+        ]
+      }
+    },
+    {
+      "name": "close_voting",
+      "pure": false,
+      "proof": true,
+      "arguments": [
+      ],
+      "result-type": {
+        "type-name": "Tuple",
+        "types": [
+        ]
+      }
+    },
+    {
+      "name": "vote",
+      "pure": false,
+      "proof": true,
+      "arguments": [
+        {
+          "name": "voter_id",
+          "type": {
+            "type-name": "Bytes",
+            "length": 32
+          }
+        },
+        {
+          "name": "choice",
+          "type": {
+            "type-name": "Boolean"
+          }
+        }
+      ],
+      "result-type": {
+        "type-name": "Tuple",
+        "types": [
+        ]
+      }
+    }
+  ],
+  "witnesses": [
+  ],
+  "contracts": [
+  ]
+}

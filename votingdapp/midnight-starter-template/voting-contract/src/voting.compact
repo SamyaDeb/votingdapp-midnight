@@ -1,0 +1,33 @@
+pragma language_version >= 0.20;
+
+import CompactStandardLibrary;
+
+// public state
+export ledger yes_votes: Counter;
+export ledger no_votes: Counter;
+export ledger voters: Set<Bytes<32>>;
+export ledger is_open: Boolean;
+
+// open voting
+export circuit open_voting(): [] {
+  is_open = true;
+}
+
+// close voting
+export circuit close_voting(): [] {
+  is_open = false;
+}
+
+// cast a vote: choice=true → yes, choice=false → no
+export circuit vote(voter_id: Bytes<32>, choice: Boolean): [] {
+  assert(is_open, "voting is not open");
+  const disclosed_voter_id = disclose(voter_id);
+  const disclosed_choice = disclose(choice);
+  assert(!voters.member(disclosed_voter_id), "already voted");
+  voters.insert(disclosed_voter_id);
+  if (disclosed_choice) {
+    yes_votes.increment(1);
+  } else {
+    no_votes.increment(1);
+  }
+}
