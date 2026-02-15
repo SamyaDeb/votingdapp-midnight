@@ -1,5 +1,8 @@
 # Voting dApp — Midnight Network
 
+<img width="1470" height="956" alt="Screenshot 2026-02-15 at 6 00 40 PM" src="https://github.com/user-attachments/assets/cd41af5f-2746-4b4d-899d-96ab3de08327" />
+
+
 A decentralized, zero-knowledge voting application built on the [Midnight](https://midnight.network) blockchain using the Compact smart contract language.
 
 ---
